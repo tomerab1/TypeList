@@ -165,10 +165,8 @@ namespace tl { namespace algo {
         template<typename T, typename U, typename... Args>
         struct ReplaceAll<TypeList<T, Args...>, T, U>
         {
-        private:
-            using L1 = typename PopFront<TypeList<T, Args...>>::Result;
         public:
-            using Result = typename PushFront<L1, U>::Result;
+            using Result = typename Replace<TypeList<U, Args...>, T, U>::Result;
         };
 
         template<typename T, typename U>
