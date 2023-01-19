@@ -149,7 +149,6 @@ TEST_F(TypeListTest, TestReplace)
 	EXPECT_TRUE((std::is_same_v<int, tl::algo::TypeAt<result, 1>::Type>));
 	EXPECT_TRUE((std::is_same_v<float, tl::algo::TypeAt<result, 2>::Type>));
 	EXPECT_TRUE((std::is_same_v<const char const&, tl::algo::TypeAt<result, 3>::Type>));
-
 	EXPECT_EQ(result::size(), lst::size());
 }
 
@@ -163,6 +162,5 @@ TEST_F(TypeListTest, TestReplaceAll)
 	EXPECT_TRUE((std::is_same_v<int, tl::algo::TypeAt<result, 2>::Type>));
 	EXPECT_TRUE((std::is_same_v<float, tl::algo::TypeAt<result, 3>::Type>));
 	EXPECT_TRUE((std::is_same_v<const char const&, tl::algo::TypeAt<result, 4>::Type>));
-
 	EXPECT_EQ(result::size(), newList::size());
 }
