@@ -155,12 +155,32 @@ TEST_F(TypeListTest, TestReplace)
 TEST_F(TypeListTest, TestReplaceAll)
 {
 	using newList = tl::algo::PushFront<lst, double>::Result;
-	using result = tl::algo::ReplaceAll<newList, double, const char const&>::Result;
+	using result = tl::algo::ReplaceAll<newList, double, const char const*>::Result;
 
-	EXPECT_TRUE((std::is_same_v<const char const&, tl::algo::TypeAt<result, 0>::Type>));
+	EXPECT_TRUE((std::is_same_v<const char const*, tl::algo::TypeAt<result, 0>::Type>));
 	EXPECT_TRUE((std::is_same_v<char, tl::algo::TypeAt<result, 1>::Type>));
 	EXPECT_TRUE((std::is_same_v<int, tl::algo::TypeAt<result, 2>::Type>));
 	EXPECT_TRUE((std::is_same_v<float, tl::algo::TypeAt<result, 3>::Type>));
-	EXPECT_TRUE((std::is_same_v<const char const&, tl::algo::TypeAt<result, 4>::Type>));
+	EXPECT_TRUE((std::is_same_v<const char const*, tl::algo::TypeAt<result, 4>::Type>));
 	EXPECT_EQ(result::size(), newList::size());
+}
+
+TEST_F(TypeListTest, TestComapreEQ)
+{
+	using copy = lst;
+	EXPECT_TRUE((tl::algo::CompareLists<lst, copy>::value));
+}
+
+TEST_F(TypeListTest, TestComapreNotEQ)
+{
+	using copy = tl::algo::PushFront<lst, const char>::Result;
+	EXPECT_FALSE((tl::algo::CompareLists<lst, copy>::value));
+}
+
+TEST_F(TypeListTest, TestIndexOf)
+{
+	EXPECT_EQ((tl::algo::IndexOf<lst, char>::value), 0);
+	EXPECT_EQ((tl::algo::IndexOf<lst, int>::value), 1);
+	EXPECT_EQ((tl::algo::IndexOf<lst, float>::value), 2);
+	EXPECT_EQ((tl::algo::IndexOf<lst, double>::value), 3);
 }

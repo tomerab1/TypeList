@@ -7,13 +7,13 @@
 int main()
 {
     using lst = tl::TypeList<char, int, float, double>;
-    using newList = tl::algo::PushFront<lst, double>::Result;
-    using result = tl::algo::ReplaceAll<newList, double, const char const&>::Result;
+    using copy = lst;
 
     lst::print();
-    newList::print();
-    result::print();
-    
+    std::cout << tl::algo::IndexOf<lst, char>::value << '\n';
+    std::cout << tl::algo::IndexOf<lst, int>::value << '\n';
+    std::cout << tl::algo::IndexOf<lst, float>::value << '\n';
+    std::cout << tl::algo::IndexOf<lst, double>::value << '\n';
 
     return 0;
 }

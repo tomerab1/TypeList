@@ -180,4 +180,52 @@ namespace tl { namespace algo {
         {
             using Result = typename PushFront<typename ReplaceAll<typename ReplaceAll<TypeList<Args...>, T, U>::Result, T, U>::Result, Head>::Result;
         };
+
+        template<typename TL1, typename TL2>
+        struct CompareLists;
+
+        template<typename T1, typename... Args1, typename T2, typename... Args2>
+        struct CompareLists<TypeList<T1, Args1...>, TypeList<T2, Args2...>>
+        {
+            static constexpr bool value = std::is_same_v<T1, T2> && CompareLists<TypeList<Args1...>, TypeList<Args2...>>::value;
+        };
+
+        template<typename... Args>
+        struct CompareLists<TypeList<Args...>, TypeList<>>
+        {
+            static constexpr bool value = false;
+        };
+
+        template<typename... Args>
+        struct CompareLists<TypeList<>, TypeList<Args...>>
+        {
+            static constexpr bool value = false;
+        };
+
+        template<>
+        struct CompareLists<TypeList<>, TypeList<>>
+        {
+            static constexpr bool value = true;
+        };
+
+        template<typename TL, typename T>
+        struct IndexOf;
+
+        template<typename Head, typename... Args, typename T>
+        struct IndexOf<TypeList<Head, Args...>, T>
+        {
+            static constexpr std::size_t value = IndexOf<TypeList<Args...>, T>::value + 1;
+        };
+
+        template<typename T, typename... Args>
+        struct IndexOf<TypeList<T, Args...>, T>
+        {
+            static constexpr std::size_t value = 0;
+        };
+
+        template<typename T>
+        struct IndexOf<TypeList<>, T>
+        {
+            static constexpr std::size_t value = 0;
+        };
 } }
