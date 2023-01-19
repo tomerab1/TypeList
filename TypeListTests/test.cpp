@@ -33,6 +33,7 @@ TEST_F(TypeListTest, TestTypeAt)
 TEST_F(TypeListTest, TestPushFront)
 {
 	using newList = tl::algo::PushFront<lst, int[10]>::Result;
+
 	EXPECT_TRUE((std::is_same_v<int[10], tl::algo::TypeAt<newList, 0>::Type>));
 	EXPECT_EQ(newList::size(), lst::size() + 1);
 }
@@ -40,6 +41,7 @@ TEST_F(TypeListTest, TestPushFront)
 TEST_F(TypeListTest, TestPushBack)
 {
 	using newList = tl::algo::PushBack<lst, int[10]>::Result;
+
 	EXPECT_TRUE((std::is_same_v<int[10], tl::algo::TypeAt<newList, newList::size() - 1>::Type>));
 	EXPECT_EQ(newList::size(), lst::size() + 1);
 }
@@ -47,6 +49,7 @@ TEST_F(TypeListTest, TestPushBack)
 TEST_F(TypeListTest, TestPrintReversed)
 {
 	using reversed = tl::algo::Reverse<lst>::Result;
+
 	testing::internal::CaptureStdout();
 	reversed::print();
 	std::string out = testing::internal::GetCapturedStdout();
@@ -56,6 +59,7 @@ TEST_F(TypeListTest, TestPrintReversed)
 TEST_F(TypeListTest, TestRevrsed)
 {
 	using reversed = tl::algo::Reverse<lst>::Result;
+
 	EXPECT_TRUE((std::is_same_v<double, tl::algo::TypeAt<reversed, 0>::Type>));
 	EXPECT_TRUE((std::is_same_v<float, tl::algo::TypeAt<reversed, 1>::Type>));
 	EXPECT_TRUE((std::is_same_v<int, tl::algo::TypeAt<reversed, 2>::Type>));
@@ -66,6 +70,7 @@ TEST_F(TypeListTest, TestRevrsed)
 TEST_F(TypeListTest, TestPopBack)
 {
 	using result = tl::algo::PopBack<lst>::Result;
+
 	EXPECT_TRUE((std::is_same_v<char, tl::algo::TypeAt<lst, 0>::Type>));
 	EXPECT_TRUE((std::is_same_v<int, tl::algo::TypeAt<lst, 1>::Type>));
 	EXPECT_TRUE((std::is_same_v<float, tl::algo::TypeAt<lst, 2>::Type>));
