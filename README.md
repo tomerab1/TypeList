@@ -1,9 +1,6 @@
 # Introduction
 This is a simple implementation of a type list.
 It includes several algorithms for manipulating the list and its elements.
-Feel free to contribute more tests\algorithms or change the current ones 
-to make the implementation more robust and efficient.
-I've written for educational purpose while skimming thorugh 'Modern C++ Design' (Andrei Alexandrescu).
 
 # Features
 
@@ -42,3 +39,8 @@ Returns the index of the specified type, from the beginning of the list.
 
 ## RIndexOf
 Returns the index of the specified type, from the end of the list.
+
+# Contribute
+Feel free to contribute more tests\algorithms or change the current ones 
+to make the implementation more robust and efficient.
+I've written for educational purpose while skimming thorugh 'Modern C++ Design' (Andrei Alexandrescu).
