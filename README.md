@@ -10,7 +10,7 @@ I've written for educational purpose while skimming thorugh 'Modern C++ Design' 
 ## PushBack
 Pushes a new type into the back of the list.
 
-## PushFront
+### PushFront
 Pushes a new type into the front of the list.
 
 ## Reverse
