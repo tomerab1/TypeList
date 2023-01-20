@@ -43,7 +43,6 @@ Returns the index of the specified type, from the beginning of the list.
 ## RIndexOf
 Returns the index of the specified type, from the end of the list.
 
-| First Header  | Second Header |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
+| PushBack  | Pushes a new type into the back of the list. |
 | Content Cell  | Content Cell  |
