@@ -42,3 +42,8 @@ Returns the index of the specified type, from the beginning of the list.
 
 ## RIndexOf
 Returns the index of the specified type, from the end of the list.
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
