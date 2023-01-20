@@ -44,5 +44,5 @@ Returns the index of the specified type, from the beginning of the list.
 Returns the index of the specified type, from the end of the list.
 
 | ------------- | ------------- |
-| PushBack  | Pushes a new type into the back of the list. |
+| PushBack      | Pushes a new type into the back of the list. |
 | Content Cell  | Content Cell  |
