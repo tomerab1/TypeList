@@ -168,12 +168,14 @@ TEST_F(TypeListTest, TestReplaceAll)
 TEST_F(TypeListTest, TestComapreEQ)
 {
 	using copy = lst;
+
 	EXPECT_TRUE((tl::algo::CompareLists<lst, copy>::value));
 }
 
 TEST_F(TypeListTest, TestComapreNotEQ)
 {
 	using copy = tl::algo::PushFront<lst, const char>::Result;
+
 	EXPECT_FALSE((tl::algo::CompareLists<lst, copy>::value));
 }
 
@@ -183,4 +185,22 @@ TEST_F(TypeListTest, TestIndexOf)
 	EXPECT_EQ((tl::algo::IndexOf<lst, int>::value), 1);
 	EXPECT_EQ((tl::algo::IndexOf<lst, float>::value), 2);
 	EXPECT_EQ((tl::algo::IndexOf<lst, double>::value), 3);
+}
+
+TEST_F(TypeListTest, RTestIndexOf)
+{
+	EXPECT_EQ((tl::algo::RIndexOf<lst, char>::value), 0);
+	EXPECT_EQ((tl::algo::RIndexOf<lst, int>::value), 1);
+	EXPECT_EQ((tl::algo::RIndexOf<lst, float>::value), 2);
+	EXPECT_EQ((tl::algo::RIndexOf<lst, double>::value), 3);
+}
+
+TEST_F(TypeListTest, RTestIndexOfPushBack)
+{
+	using newList = tl::algo::PushBack<lst, char>::Result;
+
+	EXPECT_EQ((tl::algo::RIndexOf<newList, char>::value), 4);
+	EXPECT_EQ((tl::algo::RIndexOf<newList, int>::value), 1);
+	EXPECT_EQ((tl::algo::RIndexOf<newList, float>::value), 2);
+	EXPECT_EQ((tl::algo::RIndexOf<newList, double>::value), 3);
 }

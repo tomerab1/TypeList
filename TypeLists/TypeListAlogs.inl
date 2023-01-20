@@ -228,4 +228,13 @@ namespace tl { namespace algo {
         {
             static constexpr std::size_t value = 0;
         };
+
+        template<typename TL, typename T>
+        struct RIndexOf
+        {
+        private:
+            using reversed = typename algo::Reverse<TL>::Result;
+        public:
+            static constexpr std::size_t value = reversed::size() - algo::IndexOf<reversed, T>::value - 1;
+        };
 } }
