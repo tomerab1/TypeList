@@ -1,37 +1,37 @@
 # Features
 
-# PushBack
+## PushBack
 Pushes a new type into the back of the list.
 
-# PushFron
+## PushFron
 Pushes a new type into the front of the list.
 
-# Reverse
+## Reverse
 Reverses the list.
 
-# TypeAt
+## TypeAt
 Return the element at the specified index.
 
-# RemoveType
+## RemoveType
 Removes the specified type from the list.
 
-# RemoveAll
+## RemoveAll
 Remove all occurrences of the type from the list.
 
-# Replace
+## Replace
 Replaces the specified type with the new type specified.
 
-# ReplaceAll
+## ReplaceAll
 Replace all the occurrences of the specified type with the new type specified.
 
-# RemoveDuplicates
+## RemoveDuplicates
 Removes any duplicate from the list.
 
-# CompareList
+## CompareList
 Compare the two lists passed to it for equality.
 
-# IndexOf
+## IndexOf
 Returns the index of the specified type, from the beginning of the list.
 
-# RIndexOf
+## RIndexOf
 Returns the index of the specified type, from the end of the list.
