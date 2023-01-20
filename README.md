@@ -1,9 +1,16 @@
+# Introduction
+This is a simple implementation of a type list.
+It includes several algorithms for manipulating the list and its elements.
+Feel free to contribute more test\algorithm or change the current ones 
+to make the implementation more robust and efficient.
+I've written for educational purpose while skimming thorugh 'Modern C++ Design' (Andrei Alexandrescu).
+
 # Features
 
 ## PushBack
 Pushes a new type into the back of the list.
 
-## PushFron
+## PushFront
 Pushes a new type into the front of the list.
 
 ## Reverse
